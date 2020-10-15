@@ -26,7 +26,7 @@
 	</script>
 	<script>
 		function imglive() {
-			var urlimg = "https://images.costcobusinessdelivery.com/ImageDelivery/imageService?profileId=12028466&recipeName=680&itemId=" + document.getElementById("urlimg").value + "&viewId=" + document.getElementById("viewid").value;
+			var urlimg = document.getElementById("server").value + document.getElementById("urlimg").value + "&viewId=" + document.getElementById("viewid").value;
 			$("#inlineimg").attr("src", urlimg);
 			return false;
 		}
@@ -122,6 +122,11 @@
 				<h3>Product Images</h3>
 				
 				<form onSubmit="return imglive();">
+					<select id="server">
+						<option value="https://images.costcobusinessdelivery.com/ImageDelivery/imageService?profileId=12028466&recipeName=680&itemId=">Costco</option>
+						<option value="https://richmedia.ca-richimage.com/ImageDelivery/imageService?profileId=12028466&recipeName=680&itemId=">RichMedia</option>
+					</select>
+					<br>
 					Item <input type="text" name="urlimg" id="urlimg" style="width: 30%;" autofocus>
 					<select id="viewid">
 						<option value="1">1</option>
@@ -132,7 +137,7 @@
 					</select>
 					<input type="submit" value="search" class="material-icons button">
 				</form>
-				<img src="https://www.costcobusinessdelivery.com//wcsstore/CostcoGLOBALSAS/images/unavailable_350.png"
+				<img src="https://www.costcobusinessdelivery.com/wcsstore/CostcoGLOBALSAS/images/unavailable_350.png"
 					style="width: 70%; max-width: 350px;" id="inlineimg">
 			</div>
 
